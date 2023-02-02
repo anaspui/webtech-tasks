@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Form </title>
+    </head>
+    <body>
+        <form action="" method="POST">
+            <table>
+                <tr>
+                    <td>
+                            <fieldset>
+                                <table>
+                                    <legend>Personal Information</legend>
+                                    <tr>
+                                        <td><label for="fname" name="fname">First Name:</label></td>
+                                        <td><input type="text" name="fname" id="fname"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="lname" name="lname">Last Name:</label></td>
+                                        <td><input type="text" name="lname" id="lname"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="gender" name="gender">Gender:</label></td>
+                                        <td>
+                                            <input type="radio" name="gender" id="male" value="Male">
+                                            <label for="male">Male</label>
+                                            <input type="radio" name="gender" id="female" value="Female">
+                                            <label for="female">Female</label>   
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="email" name="email">Email:</label></td>
+                                        <td><input type="text" name="email" id="email"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="phn" name="phn">Phone:</label></td>
+                                        <td><input type="phn" name="phn" id="phn"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="dob">Date Of Birth:</label></td>
+                                        <td><input type="date" name="date" id="date"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="address" name="address">Address:</label></td>
+                                        <td><input type="address" name="adress" id="address"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="desc" name="desc">Description:</label></td>
+                                        <td><textarea name="desc" id="desc" cols="30" rows="5"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="nationality">Nationality:</label></td>
+                                        <td><select name="nationality" id="nationality">
+                                            <option value="Bangladeshi"> Bangladeshi</option>
+                                            <option value="Indian">Indian</option>
+                                            <option value="Pakistani">Pakistani</option>
+                                        </select></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                    </td>
+    
+                    <td>
+    
+                    </td>
+                </tr>
+            </table>
+            <input type="submit">
+        </form>
+    </body>
+</html>
