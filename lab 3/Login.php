@@ -1,6 +1,6 @@
 <?php
 // var_dump($_REQUEST);
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $username = $_REQUEST["username"];
         $password = $_REQUEST["password"];
@@ -10,10 +10,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
         if (empty($password)) {
                 echo "Please fillup Password.<br>";
-        }
-        else{
+        } else {
                 echo "<h1>Login successful</h1>";
-                
+
         }
 
 }
