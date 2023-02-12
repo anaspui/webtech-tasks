@@ -4,13 +4,15 @@ function sanitize($data)
     $data = htmlspecialchars($data);
     return $data;
 }
-//var_dump($_REQUEST);
+var_dump($_REQUEST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fname = $_REQUEST["fname"];
     $lname = $_REQUEST["lname"];
     $faname = $_REQUEST["faname"];
     $moname = $_REQUEST["moname"];
     $bgrp = $_REQUEST["bgrp"];
+    $gender = $_REQUEST["gender"];
+    $dob = $_REQUEST["date"];
     $email = $_REQUEST["email"];
     $phn = $_REQUEST["phn"];
     $web = $_REQUEST["web"];
@@ -52,9 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Please fillup Password.<br>";
     } else {
         echo "  ";
-
     }
-
 }
 ?>
 
@@ -67,19 +67,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Registration Page
     </title>
     <style>
-    .center {
-        margin-left: auto;
-        margin-right: auto;
+        .center {
+            margin-left: auto;
+            margin-right: auto;
 
-    }
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    button {
-        text-align: center;
-    }
+        button {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -120,14 +120,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <th><label for="male">Gender: </label> </th>
 
                             <td><label for="">
-                                    <?php echo "Male" ?>
+                                    <?php echo $gender ?>
                                 </label></Input></td>
 
 
                         </tr>
                         <tr>
                             <th><label for="date">Date of Birth</label></th>
-                            <td><input type="date" name="date" id="date"></td>
+                            <td><label for="">
+                                    <?php echo $dob ?>
+                                </label></Input></td>
                         </tr>
                         <tr>
                             <th><label for="bgrp">Blood Group:</label> </th>
