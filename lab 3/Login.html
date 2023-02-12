@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <style>
+        .center {
+      margin-left: auto;
+      margin-right: auto;
+    
+    }
+    h1{
+        text-align: center;
+    }
+    button{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+    <form action="Login.php" method="POST">
+        <table class="center">
+            <h1>Login</h1>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend><b>Login: </b></legend>
+                        <table>
+                            <tr>
+                                <th><label for="Username">Username: </label></th>
+                                <td><Input type="text" name="username" id="username"></Input></td>
+                            </tr>
+                            <tr>
+                                <th><label for="password">Password: </label></th>
+                                <td><input type="text" name="password" id="password"></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button name="submit" type="submit" value="Login">Login</button> <br>
+                    <p>Don't have an Account? Register <a href="Registration.html">Here</a></p>
+                    
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
