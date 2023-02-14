@@ -1,12 +1,12 @@
 <html>
 
 <head>
-    <title>Login</title>
+        <title>Login</title>
 </head>
 
 <body>
-    <div align="center">
-        <?php
+        <div align="center">
+                <?php
                 function sanitize($data)
                 {
                         $data = trim($data);
@@ -35,7 +35,7 @@
 
                 }
                 ?>
-    </div>
+        </div>
 </body>
 
 </html>

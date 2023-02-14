@@ -10,7 +10,7 @@
 
 <body>
     <div align="center">
-        <h1>Registration</h1>
+        <h1>Registration</h1><br>
         <?php
         function sanitize($data)
         {
@@ -19,19 +19,21 @@
             $data = htmlspecialchars($data);
             return $data;
         }
-        //var_dump($_REQUEST);
+        // var_dump($_REQUEST);
+        // echo "<hr>";
+        // print_r(isset($_POST['gender']));
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $fname = $_POST["fname"];
-            $lname = $_POST["lname"];
-            $faname = $_POST["faname"];
-            $moname = $_POST["moname"];
-            $bgrp = $_POST["bgrp"];
-            $gender = $_POST["gender"];
-            $dob = $_POST["date"];
-            $email = $_POST["email"];
-            $phn = $_POST["phn"];
-            $web = $_POST["web"];
-            $pad = $_POST["pad"];
+            $fname = sanitize($_POST["fname"]);
+            $lname = sanitize($_POST["lname"]);
+            $faname = sanitize($_POST["faname"]);
+            $moname = sanitize($_POST["moname"]);
+            $bgrp = sanitize($_POST["bgrp"]);
+            $gender = isset($_POST["gender"]) ? sanitize($_POST["gender"]) : "";
+            $dob = sanitize($_POST["date"]);
+            $email = sanitize($_POST["email"]);
+            $phn = sanitize($_POST["phn"]);
+            $web = sanitize($_POST["web"]);
+            $pad = sanitize($_POST["pad"]);
             $username = sanitize($_POST["username"]);
             $password = sanitize($_POST["password"]);
             $flag = true;
@@ -51,9 +53,17 @@
                 $flag = false;
                 echo "Please fillup Mothers Name.<br>";
             }
+            if (empty($gender)) {
+                $flag = false;
+                echo "Please fillup Genders.<br>";
+            }
             if (empty($bgrp)) {
                 $flag = false;
                 echo "Please fillup Blood Group.<br>";
+            }
+            if (empty($dob)) {
+                $flag = false;
+                echo "Please fillup DOB.<br>";
             }
             if (empty($email)) {
                 $flag = false;
@@ -78,14 +88,12 @@
             if (empty($password)) {
                 $flag = false;
                 echo "Please fillup Password.<br>";
-            } else {
-                $flag = true;
-                echo "<p><u>Registration Successful.</u></p><br>";
             }
-        }
+            if ($flag === true) {
+                echo "<p><u>Registration Successful.</u></p><br>";
 
-        ?>
-        <table class="center">
+                ?>
+        <table>
             <tr>
                 <td>
                     <fieldset>
@@ -218,6 +226,12 @@
         </tr>
         </table>
     </div>
+
+
+    <?php
+            }
+        }
+        ?>
 </body>
 
 </html>
